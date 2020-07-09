@@ -6,10 +6,35 @@ public class Cat {
         return voice;
     }
 
+    private String food;
+    private String name;
+
+    public void show() {
+        System.out.println(this.name);
+        System.out.println(this.food);
+
+    }
+
+    public void giveNik(String nik) {
+        this.name = nik;
+    }
+
+    public void eat(String meat) {
+        this.food = meat;
+    }
+
     public static void main(String[] args) {
-        Cat peppy = new Cat();
-        Cat sparky = new Cat();
-        String say = peppy.sound();
-        System.out.println("Peppy said " + say);
+        System.out.println("There are Gav's food");
+        Cat gav = new Cat();
+        gav.giveNik("Gav's");
+        gav.eat("kotleta");
+        gav.sound();
+        gav.show();
+        System.out.println("There are Black's food");
+        Cat black = new Cat();
+        black.giveNik("Black");
+        black.eat("fish");
+        System.out.println(black.sound());
+        black.show();
     }
 }
