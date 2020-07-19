@@ -4,19 +4,24 @@ public class Battary {
     private int load;
 
     public Battary(int charge) {
-        this.load = charge;
+        load = charge;
     }
 
     public void exchange(Battary another) {
-        this.load = this.load - another.load;
-        another.load = 0;
+        another.load = load + another.load;
+        /** этой конструкцией this.load = 0 мы задаем НОВОЕ значение переменной, которая была выгружена в строке выше this.load
+         *
+         */
+        load = 0;
     }
 
     public static void main(String[] args) {
-        Battary fullCharge = new Battary(100);
-        Battary halfCharge = new Battary(30);
-        System.out.println("Battary fullcharge is " + fullCharge.load + "%" + " " + " Battary halfcharge is " + halfCharge.load + "%");
-        fullCharge.exchange(halfCharge);
-        System.out.println("Battary charges is " + fullCharge.load + "%" + " " + " " + "Battary halfcharge is " + halfCharge.load);
+        Battary one = new Battary(70);
+        Battary two = new Battary(30);
+        System.out.println("Battary charge One is " + one.load + "%" + " " + " Battary charge Two is " + two.load + "%");
+        two.load = two.load - one.load;
+        two.exchange(one);
+
+        System.out.println("Battary charges One now is " + one.load + "%" + " " + " " + "Battary charge Two now is " + two.load + "%");
     }
 }

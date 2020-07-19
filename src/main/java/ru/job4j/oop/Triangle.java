@@ -1,0 +1,41 @@
+package ru.job4j.oop;
+
+import java.awt.*;
+
+public class Triangle {
+    private Point first;
+    private Point second;
+    private Point third;
+
+    public Triangle (Point ap, Point bp, Point cp) {
+        this.first = ap;
+        this.second = bp;
+        this.third = cp;
+    }
+
+    public double period(double a, double b, double c) {
+        return 0.5 * (a + b + c);
+    }
+
+    public boolean exist (double ab, double ac, double bc) {
+        boolean result = false;
+           if(result = (ab + ac) > bc | (ac + bc) > ac | (ab + bc) > ac) {
+            result = true;
+        }
+        return result;
+    }
+
+    public double area () {
+        double result = -1;
+        double ab = first.distance(second);
+        double ac = first.distance(third);
+        double bc = second.distance(third);
+        double p = period(ab, ac, bc);
+        if (this.exist(ab, ac, bc)) {
+            result = Math.sqrt(p * (p - ab)*(p - ac)*(p - bc));
+            }
+        return result;
+    }
+
+
+}
