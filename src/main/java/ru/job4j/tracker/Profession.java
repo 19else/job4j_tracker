@@ -29,11 +29,16 @@ public class Profession {
         return covid;
     }
 
+    public String builder(String building) {
+        return building;
+    }
+
     public static void main(String[] args) {
         Profession engineer = new Profession();
         Profession doctor = new Profession();
-        System.out.println(engineer.getName());
-        System.out.println(doctor.getBirthday());
-        System.out.println(doctor.diagnosis("virus"));
+        engineer.getName();
+        doctor.getBirthday();
+        doctor.diagnosis("virus");
+        engineer.builder("Дом");
     }
 }
