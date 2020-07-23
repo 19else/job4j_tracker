@@ -27,21 +27,13 @@ public class Profession {
 
     public String diagnosis(String covid) {
         return covid;
-
     }
 
     public static void main(String[] args) {
         Profession engineer = new Profession();
         Profession doctor = new Profession();
-        engineer.getName();
-        doctor.getBirthday();
-        doctor.diagnosis("virus");
-
-
-
+        System.out.println(engineer.getName());
+        System.out.println(doctor.getBirthday());
+        System.out.println(doctor.diagnosis("virus"));
     }
-
-
-
-
 }
