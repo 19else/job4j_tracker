@@ -33,6 +33,11 @@ public class Profession {
         return building;
     }
 
+    public String programmer(String name) {
+        this.name = name;
+        return name;
+    }
+
     public static void main(String[] args) {
         Profession engineer = new Profession();
         Profession doctor = new Profession();
@@ -40,5 +45,6 @@ public class Profession {
         doctor.getBirthday();
         doctor.diagnosis("virus");
         engineer.builder("Дом");
+        engineer.programmer("Fedor");
     }
 }
