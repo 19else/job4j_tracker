@@ -3,8 +3,6 @@ package ru.job4j.tracker;
 public class Item {
     private String id;
     private String name;
-    private String surname;
-    private String number;
 
 
     public Item() {
@@ -16,8 +14,7 @@ public class Item {
 
     public Item(String number, String surname) {
             this.id = number + " 2020 year";
-            this.surname = "mr. " + surname;
-
+            this.name = surname;
     }
 
     public static void main(String[] args) {
@@ -26,9 +23,8 @@ public class Item {
         Item idString = new Item();
         id.name = "Sergey";
         empty.id = "empty";
-        idString.number = "22 june";
-        idString.surname = "Elovikov";
-       }
+        idString.name = "Elovikov";
+      }
 
 }
 
