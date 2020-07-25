@@ -19,11 +19,11 @@ public class Item {
 
     public static void main(String[] args) {
         Item empty = new Item();
-        Item id = new Item();
-        Item idString = new Item();
+        Item id = new Item("22 june");
+        Item idString = new Item("22 june", "Elovikov");
         id.name = "Sergey";
-        empty.id = "empty";
-        idString.name = "Elovikov";
+        idString.id = "empty";
+
       }
 
 }
