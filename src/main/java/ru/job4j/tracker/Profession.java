@@ -25,26 +25,34 @@ public class Profession {
         return birthday;
     }
 
-    public String diagnosis(String covid) {
-        return covid;
+    public class Doctor extends Profession {
+        public String dantist () {
+            return "Will heal teeth";
+        }
+        public String sergion() {
+            return "Will heal the leg";
+        }
     }
 
-    public String builder(String building) {
-        return building;
-    }
-
-    public String programmer(String name) {
-        this.name = name;
-        return name;
+    public class Engeneer extends Profession{
+        public String programmer() {
+            return "write a code";
+        }
+        public String builder() {
+            return "builds houses";
+        }
     }
 
     public static void main(String[] args) {
-        Profession engineer = new Profession();
-        Profession doctor = new Profession();
-        engineer.getName();
-        doctor.getBirthday();
-        doctor.diagnosis("virus");
-        engineer.builder("Дом");
-        engineer.programmer("Fedor");
+        Profession engin = new Profession();
+        Profession doc = new Profession();
+        Engeneer engeneer = new Engeneer();
+        Doctor doctor = new Doctor();
+        engeneer.programmer();
+        doctor.sergion();
+        System.out.println(doctor.dantist());
+        System.out.println(engeneer.builder());
+        System.out.println(engin.getName());
+        System.out.println(doc.getBirthday());
     }
 }
