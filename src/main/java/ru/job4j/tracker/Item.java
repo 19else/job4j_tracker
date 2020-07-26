@@ -23,9 +23,7 @@ public class Item {
         Item idString = new Item("22 june", "Elovikov");
         id.name = "Sergey";
         idString.id = "empty";
-
       }
-
 }
 
 

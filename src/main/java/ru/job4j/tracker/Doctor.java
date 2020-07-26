@@ -3,11 +3,11 @@ package ru.job4j.tracker;
     public class Doctor extends Profession {
 
         public String dantist() {
-            return "Health teeth";
+            return "Health teeth!";
         }
 
         public String surgion() {
-            return "Makes surgical operations";
+            return "Makes surgical operations!";
         }
 
         public static void main(String[] args) {

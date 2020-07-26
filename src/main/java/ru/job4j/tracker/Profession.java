@@ -7,8 +7,8 @@ public class Profession {
     private String birthday;
 
     public String getName() {
-        this.name = "Vasia";
-        this.name = "Fedia";
+        this.name = "Vasiy";
+        this.name = "Fedor";
         return name;
     }
 
