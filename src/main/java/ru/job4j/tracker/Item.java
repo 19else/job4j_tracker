@@ -39,6 +39,8 @@ public class Item {
         Item idString = new Item("22 june", "Elovikov");
         id.name = "Sergey";
         idString.id = "empty";
+        System.out.println(id.name);
+        System.out.println(id.getName());
     }
 }
 
