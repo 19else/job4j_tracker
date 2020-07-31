@@ -16,8 +16,12 @@ public class Library {
             System.out.println("Книга " + boo.getName() + " содержит " + boo.getPages() + " страниц");
         }
         System.out.println("Переставляем местами книги c индексами 0 и 3 ");
-        books[0] = fourth;
-        books[3] = first;
+        Book zero = books[0];
+        books[0] = books[3];
+        books[3] = zero;
+        Book three = books[3];
+        books[3] = books [1];
+        books[1] = three;
         for (int index = 0; index < books.length; index++) {
             Book boo = books[index];
             System.out.println("Книга " + boo.getName() + " содержит " + boo.getPages() + " страниц");
