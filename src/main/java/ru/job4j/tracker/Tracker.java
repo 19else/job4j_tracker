@@ -18,7 +18,16 @@ public class Tracker {
          return Arrays.copyOf(items, size);
     }
 
-        public Item[] findByName(String key) {
+    @Override
+    public String toString() {
+        return "Tracker{" +
+                "items=" + Arrays.toString(items) +
+                ", ids=" + ids +
+                ", size=" + size +
+                '}';
+    }
+
+    public Item[] findByName(String key) {
         Item[] result = new Item[size];
         int count = 0;
             for (int index = 0; index < size; index++) {
