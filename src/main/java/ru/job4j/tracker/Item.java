@@ -24,8 +24,8 @@ public class Item {
     public Item() {
     }
 
-    public Item(String number) {
-        this.id = number;
+    public Item(String name) {
+        this.name = name;
     }
 
     public Item(String number, String surname) {
