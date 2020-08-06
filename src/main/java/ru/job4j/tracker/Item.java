@@ -24,6 +24,15 @@ public class Item {
     public Item() {
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id='" + id + '\'' +
+                ", ids=" + ids +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public Item(String name) {
         this.name = name;
     }
