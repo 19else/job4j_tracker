@@ -27,7 +27,7 @@ public class Tracker {
                     result[count++] = names;
                 }
             }
-            return result;
+            return Arrays.copyOf(result, count);
         }
 
     public Item findById(int id) {
