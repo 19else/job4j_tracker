@@ -1,16 +1,15 @@
 package ru.job4j.tracker;
 
 public class Item {
-    private String id;
-    private int ids;
+    private int id;
     private String name;
 
     public int getId() {
-        return ids;
+        return id;
     }
 
     public void setId(int id) {
-        this.ids = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -24,34 +23,16 @@ public class Item {
     public Item() {
     }
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id='" + id + '\'' +
-                ", ids=" + ids +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
     public Item(String name) {
         this.name = name;
     }
 
-    public Item(String number, String surname) {
-        this.id = number + " 2020 year";
+    public Item(int number, String surname) {
+        this.id = number;
         this.name = surname;
     }
-
-    public static void main(String[] args) {
-        Item empty = new Item();
-        Item id = new Item("22 june");
-        Item idString = new Item("22 june", "Elovikov");
-        id.name = "Sergey";
-        idString.id = "empty";
-        System.out.println(id.name);
-        System.out.println(id.getName());
-    }
 }
+
 
 
 
