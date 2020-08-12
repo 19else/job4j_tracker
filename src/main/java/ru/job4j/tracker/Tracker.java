@@ -78,16 +78,17 @@ public class Tracker {
     }
 
     public boolean delete(int id) {
-        items[indexOf(id)] = null;
-        for (int index = 0; index < size; index++) {
-            int start = index + 1;
-            int destPos = index;
-            int length = size - index;
+       if(indexOf(id) == -1) {
+           return false;
+       }
+            int start = indexOf(id) + 1;
+            int destPos = indexOf(id);
+            int length = size - indexOf(id);
 
             System.arraycopy(items, start, items, destPos, length);
             items[size - 1] = null;
             size--;
-        }
+
 
         return true;
     }
