@@ -6,6 +6,12 @@ public class ProductContains {
         Product second = new Product("Pepsi", 100);
         boolean eq = first.equals(second);
         System.out.println(eq);
+        int n = 10;
+        int price = 1;
+
+        for(int index = 1; 6 > index; index++) {
+            System.out.println(price * index);
+        }
     }
 
 }
