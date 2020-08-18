@@ -23,11 +23,9 @@ public class Matches {
                     System.out.println("Вы ввели недопустимое значение. Повторите");
                 }
          }
-        if (counter == 0) {
-            System.out.println("Выиграл игрок номер " + name + " со счетом - " );
-            player = false;
-        }
+            System.out.println("Выиграл " + name);
     }
 }
+
 
 
