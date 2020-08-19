@@ -28,7 +28,7 @@ public class Item {
     }
 
     public Item(int number, String surname) {
-        this.id = number;
+        this.id = number ;
         this.name = surname;
     }
 }
