@@ -30,7 +30,7 @@ public class StartUI {
                 System.out.print("Enter name Item: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
-                tracker.replace(id, item);
+               // tracker.replace(id, item);
                 if(tracker.replace(id, item)) {
                     System.out.println("Edit item success!");
                 } else {
@@ -41,7 +41,7 @@ public class StartUI {
                 System.out.println(" === Order deleted ===");
                 System.out.print("Enter the Item number:");
                 int number = scanner.nextInt();
-                tracker.delete(number);
+               // tracker.delete(number);
                 if(tracker.delete(number)) {
                     System.out.println("Delete is complete");
                 } else {
