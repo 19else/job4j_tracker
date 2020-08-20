@@ -7,7 +7,7 @@ public class Bus implements Transport {
     }
 
     @Override
-    public int passangers(int number) {
+    public int passangers(String number) {
         return 0;
     }
 
