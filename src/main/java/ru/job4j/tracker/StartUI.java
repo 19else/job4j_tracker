@@ -26,7 +26,7 @@ public class StartUI {
             System.out.println("Edit item success!");
         } else {
             System.out.println("Editing failed");
-        };
+        }
     }
 
     public static void deleteItem(Input input, Tracker tracker) {
