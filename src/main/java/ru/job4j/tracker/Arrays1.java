@@ -10,5 +10,23 @@ public class Arrays1 {
 
         System.arraycopy(arraySource, 0, arrayDest, 0, 3);
         System.out.println("arrayDest after copy : " + Arrays.toString(arrayDest));
-    }
-}
+
+
+           int a = 2;
+           int b = 6;
+           int sum = 0;
+                for (int index = a; b > index; index++){
+                    sum = sum + index * b;
+                    System.out.println(index + " A = " + " B" + b);
+                    System.out.println(b);
+
+                    System.out.println(sum);
+                }
+        System.out.println("Итоговая сумма: " + sum);
+
+            }
+
+        }
+
+
+
