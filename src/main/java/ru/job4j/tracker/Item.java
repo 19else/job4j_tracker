@@ -31,6 +31,14 @@ public class Item {
         this.id = number ;
         this.name = surname;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
 
 
