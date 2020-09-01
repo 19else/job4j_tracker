@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.util.Arrays;
 
 public class StartUI {
-    public class CreateAction implements UserAction {
+    public static class CreateAction implements UserAction {
 
         @Override
         public String name() {
@@ -21,7 +21,7 @@ public class StartUI {
         }
     }
 
-    public class FindAllAction implements UserAction {
+    public static class FindAllAction implements UserAction {
 
         @Override
         public String name() {
@@ -60,7 +60,7 @@ public class StartUI {
         }
     }
 
-    public class DeleteAction implements UserAction {
+    public static class DeleteAction implements UserAction {
 
         @Override
         public String name() {
@@ -79,7 +79,7 @@ public class StartUI {
         }
     }
 
-    public class FindByIdAction implements UserAction {
+    public static class FindByIdAction implements UserAction {
 
         @Override
         public String name() {
@@ -98,7 +98,7 @@ public class StartUI {
         }
     }
 
-    public class FindByName implements UserAction {
+    public static class FindByName implements UserAction {
 
         @Override
         public String name() {
