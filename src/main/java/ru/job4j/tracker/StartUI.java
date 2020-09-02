@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class StartUI {
 
-    public static void createItem(Input input, Tracker tracker) {
+   /** public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create new Item ===");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
@@ -64,7 +64,7 @@ public class StartUI {
         } else {
             System.out.println("Item = " + name + "not found");
         }
-    }
+    } **/
 
     public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
