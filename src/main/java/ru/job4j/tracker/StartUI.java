@@ -5,6 +5,11 @@ import javax.swing.*;
 import java.util.Arrays;
 
 public class StartUI {
+    private final Output out;
+
+    public StartUI(Output out) {
+        this.out = out;
+    }
 
    /** public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create new Item ===");
@@ -108,19 +113,20 @@ public class StartUI {
     }
 
        public static void main(String[] args) {
+        Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction(),
-                new FindAllAction(),
-                new ReplaceAction(),
-                new DeleteAction(),
-                new FindByIdAction(),
-                new FindByName(),
-                new EndAction()
+                new CreateAction(output),
+                new FindAllAction(output),
+                new ReplaceAction(output),
+                new DeleteAction(output),
+                new FindByIdAction(output),
+                new FindByName(output),
+                new EndAction(output)
         };
-        new StartUI().init(input, tracker, actions);
-        /* Вызов статического метода. Обращаемся через класс */
-        //StartUI.createItem(input, tracker);
+        new StartUI(output).init(input, tracker, actions);
+        /** Вызов статического метода. Обращаемся через класс
+        //StartUI.createItem(input, tracker); **/
     }
 }
