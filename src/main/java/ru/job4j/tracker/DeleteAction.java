@@ -17,9 +17,9 @@ public class DeleteAction implements UserAction {
         out.println("=== Delete Item ===");
             int id = input.askInt("Enter name Item for delete: ");
             if (tracker.delete(id)) {
-                System.out.println("Delete is complete");
+                out.println("Delete is complete");
             } else {
-                System.out.println("Can't delete this number");
+                out.println("Can't delete this number");
             }
             return true;
         }

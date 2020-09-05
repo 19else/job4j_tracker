@@ -15,10 +15,10 @@ public class FindAllAction implements UserAction {
         @Override
         public boolean execute(Input input, Tracker tracker) {
         out.println("=== Print all item out.println ===");
-            System.out.println("=== Print all items ===");
+            out.println("=== Print all items ===");
             Item[] item = tracker.findAll();
             for (int index = 0; index < item.length; index++) {
-                System.out.println("Item = " + item[index]);
+                out.println("Item = " + item[index]);
             }
             return true;
         }
