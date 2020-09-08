@@ -9,7 +9,8 @@ public class FactTest  {
 
         @Test (expected = IllegalArgumentException.class)
         public void whenNLessThen0() {
-            Fact.calc(-1);
+            int rsl = Fact.calc(-1);
+            Assert.assertThat(rsl, Is.is(0));
 
     }
     @Test
