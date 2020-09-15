@@ -10,7 +10,7 @@ public class UserStore {
             if (users[index].getUserName(login).equals(login)) {
                 rst = index;
                 System.out.println("rst = " + rst + " Login = " + login);
-                break;
+               // break;
             }
         }
      if (rst == -1) {
@@ -20,17 +20,17 @@ public class UserStore {
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        boolean rst = true;
+     //   boolean rst = true;
         String name = user.getUserName("SergeyEEE");
         int line = name.length();
-         if (user.isValid() == false) {
-            rst = false;
+         if (user.isValid() != true) {
+           // rst = false;
             throw new UserInvalidException("User " + user + " access denied");
         }
         if(line < 3 ) {
             throw new UserInvalidException("User + " + name + " must be 3 symbols and more");
         }
-        return rst;
+        return true;
     }
 
     public static void main(String[] args) throws UserNotFoundException {
@@ -38,13 +38,30 @@ public class UserStore {
                     new User("Petr", true),
                     new User("Serge", true),
                     new User("AB", true),
-                    new User("Anton", false)
+                    new User("Anton", false),
+                    new User("Valentin", false)
             };
             User user = findUser(users, "Serge");
                 if (validate(user)) {
                 System.out.println("This user has an access");
             }
-        try {
+                try {
+                    User[] usersCatch = {
+                            new User("Valentin", false),
+                            new User("XXX", false)
+                    };
+                    User usersA  = findUser(usersCatch, "Valentin");
+                    User usersC = findUser(usersCatch, "XXX");
+                 //   User usersB = findUser(usersCatch, "Stepan");
+                    validate(usersA);
+                    validate(usersC);
+                } catch (UserNotFoundException ui) {
+                    ui.printStackTrace();
+                }
+                catch (UserInvalidException un) {
+                    un.printStackTrace();
+                }
+    /**    try {
             User user1 = findUser(users, "AB");
             validate(user1);
         } catch (UserInvalidException ui) {
@@ -61,6 +78,6 @@ public class UserStore {
             validate(user2);
         } catch (UserInvalidException ui) {
                 ui.printStackTrace();
-            }
+            } **/
     }
 }
