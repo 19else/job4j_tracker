@@ -33,7 +33,7 @@ public class UserStore {
                     new User("Petr", true),
                     new User("Serge", true),
                     new User("AB", true),
-                   // new User("Anton", false),
+                    new User("Anton", false),
                   //  new User("Valentin", false)
             };
             User user = findUser(users, "Serge");
