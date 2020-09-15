@@ -9,7 +9,7 @@ public class User {
         this.valid = valid;
     }
 
-    public String getUserName(String login) {
+    public String getUserName() {
         return userName;
     }
 

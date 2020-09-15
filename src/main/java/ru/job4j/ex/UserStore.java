@@ -7,10 +7,9 @@ public class UserStore {
     public static User findUser(User[] users, String login) throws UserNotFoundException {
         int rst = -1;
         for (int index = 0; index < users.length; index++) {
-            if (users[index].getUserName(login).equals(login)) {
+            if (users[index].getUserName().equals(login)) {
                 rst = index;
                 System.out.println("rst = " + rst + " Login = " + login);
-               // break;
             }
         }
      if (rst == -1) {
@@ -20,15 +19,11 @@ public class UserStore {
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-     //   boolean rst = true;
-        String name = user.getUserName("SergeyEEE");
-        int line = name.length();
-         if (user.isValid() != true) {
-           // rst = false;
+         if (!user.isValid()) {
             throw new UserInvalidException("User " + user + " access denied");
         }
-        if(line < 3 ) {
-            throw new UserInvalidException("User + " + name + " must be 3 symbols and more");
+        if(user.getUserName().length() < 3 ) {
+            throw new UserInvalidException("User + " + user.getUserName() + " must be 3 symbols and more");
         }
         return true;
     }
@@ -38,8 +33,8 @@ public class UserStore {
                     new User("Petr", true),
                     new User("Serge", true),
                     new User("AB", true),
-                    new User("Anton", false),
-                    new User("Valentin", false)
+                   // new User("Anton", false),
+                  //  new User("Valentin", false)
             };
             User user = findUser(users, "Serge");
                 if (validate(user)) {
@@ -48,17 +43,16 @@ public class UserStore {
                 try {
                     User[] usersCatch = {
                             new User("Valentin", false),
-                            new User("XXX", false)
+                            new User("XXX", true)
                     };
                     User usersA  = findUser(usersCatch, "Valentin");
+                    //validate(usersA);
                     User usersC = findUser(usersCatch, "XXX");
-                 //   User usersB = findUser(usersCatch, "Stepan");
-                    validate(usersA);
                     validate(usersC);
-                } catch (UserNotFoundException ui) {
+              }  /** catch (UserInvalidException ui) {
                     ui.printStackTrace();
-                }
-                catch (UserInvalidException un) {
+                } **/
+                catch (UserNotFoundException un) {
                     un.printStackTrace();
                 }
     /**    try {
