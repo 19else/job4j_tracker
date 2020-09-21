@@ -5,17 +5,17 @@ import java.util.Objects;
 public class UserStore {
 
     public static User findUser(User[] users, String login) throws UserNotFoundException {
-        int rst = -1;
+        User rst = null;
         for (int index = 0; index < users.length; index++) {
             if (users[index].getUserName().equals(login)) {
-                rst = index;
+                rst = users[index];
                 System.out.println("rst = " + rst + " Login = " + login);
             }
         }
-     if (rst == -1) {
+     if (rst == null) {
             throw new UserNotFoundException("User " + login + " not found");
         }
-        return users[rst];
+        return rst;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
@@ -40,20 +40,33 @@ public class UserStore {
                 if (validate(user)) {
                 System.out.println("This user has an access");
             }
-                try {
+
                     User[] usersCatch = {
                             new User("Valentin", false),
-                            new User("XXX", true)
+                            new User("XXX", false)
                     };
+                try {
                     User usersA  = findUser(usersCatch, "Valentin");
-                    //validate(usersA);
-                    User usersC = findUser(usersCatch, "XXX");
-                    validate(usersC);
-              }  /** catch (UserInvalidException ui) {
-                    ui.printStackTrace();
-                } **/
+                    if (validate(usersA)) {
+                        System.out.println("This user has an access");
+                    }
+
+              }  catch (UserInvalidException ui) {
+                    System.out.println(ui.getMessage());
+                }
                 catch (UserNotFoundException un) {
-                    un.printStackTrace();
+                    System.out.println(un.getMessage());
+                }
+                try {
+                    User usersB = findUser(usersCatch, "Valentin");
+                    if (validate(usersB)) {
+                        System.out.println("This user has an access");
+                    }
+                } catch (UserInvalidException ui) {
+                    System.out.println(ui.getMessage());
+                }
+                catch (UserNotFoundException un) {
+                    System.out.println(un.getMessage());
                 }
     /**    try {
             User user1 = findUser(users, "AB");

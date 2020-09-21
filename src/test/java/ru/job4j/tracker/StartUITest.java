@@ -156,9 +156,6 @@ public class StartUITest {
         ));
     }
 }
-
-
-
     /**   @Test
     public void whenAddItem() {
         String[] answer = {"Fix PC"};
