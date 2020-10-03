@@ -59,9 +59,7 @@ public class ValidateInputTest {
     );
     ValidateInput input = new ValidateInput(out, in);
     int selected = input.askInt("Enter number: ");
-
     Assert.assertThat(out.toString(), is(
-            "Please enter validate data again" + System.lineSeparator()));
-
+         "Please enter validate data again" + System.lineSeparator()));
     }
 }
