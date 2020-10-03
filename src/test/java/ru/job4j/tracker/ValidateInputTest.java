@@ -55,24 +55,13 @@ public class ValidateInputTest {
     public void whenCheckOutput() {
     Output out = new StubOutput();
     Input in = new StubInput(
-            new String[] {"0", "1", "2" }
+            new String[] {"one", "1" }
     );
-    Tracker tracker = new Tracker();
-    UserAction[] actions = {
-            new EndAction(out),
-            new CreateAction(out),
+    ValidateInput input = new ValidateInput(out, in);
+    int selected = input.askInt("Enter number: ");
 
-    };
-    new StartUI(out).init(in, tracker, actions);
     Assert.assertThat(out.toString(), is(
-            String.format(
-                    "Menu: %n"
-                     + "0. Exit%n"
-                       +     "1. Create%n"
+            "Please enter validate data again" + System.lineSeparator()));
 
-
-
-            )
-    ));
     }
 }
