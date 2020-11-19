@@ -8,7 +8,7 @@ import java.awt.*;
 import static org.hamcrest.Matchers.closeTo;
 import static org.junit.Assert.assertThat;
 
-public class TriangleTest {
+public class    TriangleTest {
 
     @Test
      public void Period() {
