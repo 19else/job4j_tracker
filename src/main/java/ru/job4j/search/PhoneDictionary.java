@@ -20,9 +20,10 @@ public class PhoneDictionary {
               person.getName().contains(key) ||
               person.getAddress().contains(key) ||
               person.getPhone().contains(key)) {
-               result = persons;
+               result.add(person);
            }
         }
+
         return result;
     }
 }
