@@ -15,15 +15,11 @@ public class PriorityQueue {
     public void put(Task task) {
         int index = 0;
         for (Task element : tasks) {
-            if (task.getPriority() > element.getPriority()) {
-                index++;
-            } else {
-                this.tasks.add(index, task);
+            if (task.getPriority() < element.getPriority()) {
                 break;
-
             }
-        }
-
+            index++;
+            }
         this.tasks.add(index, task);
     }
  //Метод take возвращает первый элемент из списка и удаляет его.
