@@ -18,6 +18,10 @@ public class ConvertMatrix2List {
 
     public static void main(String[] args) {
         ConvertMatrix2List array = new ConvertMatrix2List();
-        array.toList(new int[][]{{1, 2, 3}, {4, 5, 6}});
+        array.toList(new int[][]{
+                {1, 2, 3},
+                {4, 5, 6}
+        }
+        );
     }
 }
