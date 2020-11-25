@@ -8,10 +8,8 @@ public class ConvertListToArray {
         int[][] array = new int[groups][cells];
         int row = 0, cell = 0;
           for (int num : list) {
-
                array[row][cell] = num;
                cell++;
-
               if (cell == cells) {
                 cell = 0;
                 row++;
