@@ -9,7 +9,7 @@ public class ConvertMatrix2List {
         for (int[] row : array) {
             for (int cell : row)
                   {
-                      System.out.print(cell + " ");
+                      System.out.print(cell + " ");//
                       list.add(cell);
             }
         }
