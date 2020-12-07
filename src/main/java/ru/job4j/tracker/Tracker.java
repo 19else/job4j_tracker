@@ -6,12 +6,12 @@ public class Tracker {
   //  private final Item[] items = new Item[100];
     private final List<Item[]> items = new List<>();
     private int ids = 1;
-    private int size = 0;
+   // private int size = 0;
 
     private int indexOf(int id) {
         int result = -1;
 
-        for (int index = 0; index < size; index++) {
+        for (int index = 0; index < items.size(); index++) {
           //  if(items[index].getId() == id) {
             if(items.get(index).equals(id)) {
 
@@ -25,34 +25,35 @@ public class Tracker {
     public Item add(Item item) {
         item.setId(ids++);
        // items[size++] = item;
-        items.add(size++,item);
+        items.add(item);
         return item;
     }
 
-    public Item[] findAll() {
-        return Arrays.copyOf(items, size);
-        return items.set(size, items);
+    public List<Item[]> findAll() {
+       // return Arrays.copyOf(items, size);
+        return items;
     }
 
-    @Override
+  /**  @Override
     public String toString() {
         return "Tracker{" +
                 "items=" + items +
                 ", ids=" + ids +
-                ", size=" + size +
+                ", size=" + items.size() +
                 '}';
-    }
+    } **/
 
-    public Item[] findByName(String key) {
-        Item[] result = new Item[size];
-        int count = 0;
-            for (int index = 0; index < size; index++) {
+    public List<Item[]> findByName(String key) {
+        Item[] result = new Item[items.size()];
+      //  int count = 0;
+            for (int index = 0; index < items.size(); index++) {
                 Item[] names = items.get(index);
-                if(names.getName().equals(key)) {
-                    result[count++] = names;
+                if(names.equals(key)) {
+
+                     items.add(names);
                 }
             }
-            return Arrays.copyOf(result, count);
+            return items;
         }
 
     public Item findById(int id) {
@@ -89,13 +90,14 @@ public class Tracker {
        if(index == -1) {
            return false;
        }
-            int start = index + 1;
-            int length = size - index;
+       items.remove(id);
+         /**   int start = index + 1;
+            int length = items.size() - index;
             System.arraycopy(items, start, items, index, length);
             items.get(start).getId();
             //items[size - 1] = null;
               items.set(size-1, null);
-            size--;
+           **/
         return true;
     }
 }
