@@ -57,12 +57,12 @@ public class Tracker {
             return rsl;
         }
 
-    public List<Item> findById(int id) {
+    public Item findById(int id) {
         /* Находим индекс */
         int index = indexOf(id);
-       List<Item> rsl = new ArrayList<>();
+
         /* Если индекс найден, возвращаем item, иначе null */
-        return index != -1 ? rsl : null;
+        return index != -1 ? items.get(index) : null;
    /**     Item rsl = null;
         for (int index = 0; index < size; index++) {
             Item item = items[index];
