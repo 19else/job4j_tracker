@@ -1,8 +1,10 @@
 package ru.job4j.collection;
 
+import org.hamcrest.Matcher;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 public class PassportOfficeTest {
@@ -12,5 +14,14 @@ public class PassportOfficeTest {
     PassportOffice passportOffice = new PassportOffice();
     passportOffice.add(citizen);
     assertThat(passportOffice.get(citizen.getPassport()), is(citizen));
+    }
+    @Test
+    public void whenReturnNull() {
+        Citizen citizen = new Citizen("ab 123", "Sergey Elovikov");
+        Citizen citizen1 = new Citizen("vr 456", "Elovikov Sergey");
+        PassportOffice passportOffice = new PassportOffice();
+        passportOffice.add(citizen);
+        passportOffice.add(citizen1);
+        assertNull(passportOffice.get("ab 456"));
     }
 }
