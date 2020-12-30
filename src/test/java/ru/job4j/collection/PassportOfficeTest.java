@@ -18,10 +18,8 @@ public class PassportOfficeTest {
     @Test
     public void whenReturnNull() {
         Citizen citizen = new Citizen("ab 123", "Sergey Elovikov");
-        Citizen citizen1 = new Citizen("vr 456", "Elovikov Sergey");
         PassportOffice passportOffice = new PassportOffice();
         passportOffice.add(citizen);
-        passportOffice.add(citizen1);
         assertNull(passportOffice.get("ab 456"));
     }
 }
