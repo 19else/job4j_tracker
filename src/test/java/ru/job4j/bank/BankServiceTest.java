@@ -1,4 +1,5 @@
 package ru.job4j.bank;
+
 import org.junit.Test;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
