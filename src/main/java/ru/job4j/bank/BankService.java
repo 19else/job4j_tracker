@@ -53,6 +53,7 @@ public class BankService {
         }
         if(userDest.getRequisite() != null && userSrc.getRequisite() != null) {
             userDest.setBalance(userDest.getBalance() + ammount);
+            userSrc.setBalance(userSrc.getBalance() - ammount);
             return true;
         }
         return false;

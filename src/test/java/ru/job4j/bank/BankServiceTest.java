@@ -1,8 +1,5 @@
 package ru.job4j.bank;
-
-import junit.framework.TestCase;
 import org.junit.Test;
-
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -31,5 +28,4 @@ public class BankServiceTest {
     bank.addAccount(user.getPassport(), new Account("456", 150D));
     assertThat(bank.findByRequisite("123", "456").getBalance(), is(150D));
     }
-
 }
