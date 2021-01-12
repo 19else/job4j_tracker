@@ -12,13 +12,11 @@ public class BankService {
 
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
-        if (user == null) {
-            System.out.println("User not found");
-
-        }
-        List<Account> accounts = users.get(user);
-        if (!users.containsValue(accounts)) {
-            accounts.add(account);
+        if (user != null) {
+            List<Account> accounts = users.get(user);
+            if (!users.containsValue(accounts)) {
+                accounts.add(account);
+            }
         }
     }
 
@@ -36,7 +34,7 @@ public class BankService {
         if (user == null) {
             System.out.println("User not found");
             return null;
-       }
+        }
         List<Account> account = users.get(user);
         for (Account req : account) {
             if (req.getRequisite().equals(requisite)) {
@@ -48,8 +46,16 @@ public class BankService {
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double ammount) {
-
-        return true;
+        Account userSrc = findByRequisite(srcPassport, srcRequisite);
+        Account userDest = findByRequisite(destPassport, destRequisite);
+        if (userSrc.getBalance() < ammount) {
+            return false;
+        }
+        if(userDest.getRequisite() != null && userSrc.getRequisite() != null) {
+            userDest.setBalance(userDest.getBalance() + ammount);
+            return true;
+        }
+        return false;
     }
 
     public static void main(String[] args) {
@@ -58,6 +64,6 @@ public class BankService {
         accountList.add(new Account("2brgdg3", 150));
         int index = accountList.indexOf(new Account(requisite, -1));
         Account find = accountList.get(index);
-        System.out.println(find.getRequisite() + " -> " + find.getBalance());
+        System.out.println("Реквизиты: " + find.getRequisite() + " Баланс:  " + find.getBalance());
     }
 }
