@@ -1,5 +1,9 @@
 package ru.job4j.tracker;
 
+
+
+import java.util.Objects;
+
 public class Item implements Comparable<Item> {
     private int id;
     private String name;
@@ -43,6 +47,19 @@ public class Item implements Comparable<Item> {
     @Override
     public int compareTo(Item o) {
         return Integer.compare(id, o.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return false;
+        if(obj == null || getClass() != obj.getClass()) return false;
+        Item item = (Item) obj;
+        return id == item.id && Objects.equals(name, item.name);
     }
 }
 
