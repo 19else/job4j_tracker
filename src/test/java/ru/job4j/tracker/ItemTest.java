@@ -1,9 +1,11 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
 
@@ -17,12 +19,14 @@ public class ItemTest {
                 new Item(4, "Kennedy")
         );
         List<Item> expected = Arrays.asList(
-                new Item(1, "Merkel"),
-                new Item(2, "Trump"),
                 new Item(3, "Chaves"),
-                new Item(4, "Kennedy")
+                new Item(4, "Kennedy"),
+                new Item(1, "Merkel"),
+                new Item(2, "Trump")
         );
-        Collections.sort(items);
+        System.out.println("before: " + items);
+        Collections.sort(items, new SortByName());
+        System.out.println("after: " + items);
         assertThat(items, is(expected));
     }
 
@@ -35,13 +39,13 @@ public class ItemTest {
                 new Item(4, "Kennedy")
         );
         List<Item> expected = Arrays.asList(
-                new Item(4, "Kennedy"),
-                new Item(3, "Chaves"),
                 new Item(2, "Trump"),
-                new Item(1, "Merkel")
+                new Item(1, "Merkel"),
+                new Item(4, "Kennedy"),
+                new Item(3, "Chaves")
         );
-        
-        Collections.sort(items, Collections.reverseOrder());
+
+        Collections.sort(items, new SortByNameCountdown());
         assertThat(items, is(expected));
     }
 }
