@@ -1,7 +1,5 @@
 package ru.job4j.collection;
 
-
-import java.util.Collections;
 import java.util.Objects;
 
 public class User implements Comparable<User> {
@@ -15,12 +13,11 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User o) {
-        SortByNameUser rlsName = new SortByNameUser();
-        int rslAge = Integer.compare(age, o.getAge());
-        if(o.getName().equals(new SortByNameUser())){
-             return rslAge;
-        } else
-      return rlsName.compare(o.getName(), this.name);
+        int rsl = this.name.compareTo(o.getName());
+        if (rsl == 0) {
+            return Integer.compare(age, o.getAge());
+        }
+        return rsl;
     }
 
     public String getName() {
@@ -38,14 +35,16 @@ public class User implements Comparable<User> {
     public void setAge(int age) {
         this.age = age;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return false;
-        if(o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return age == user.age &&
                 Objects.equals(name, user.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, age);

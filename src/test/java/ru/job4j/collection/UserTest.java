@@ -20,7 +20,6 @@ public class UserTest  {
     assertThat(it.next(), is(new User("Fedor", 31)));
     assertThat(it.next(), is(new User("Sergey", 32)));
     }
-
     @Test
     public void whenCompareSergeyVSFedor() {
     int rsl = new User("Sergey", 32).compareTo(new User("Fedor", 31)
