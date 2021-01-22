@@ -8,7 +8,7 @@ import java.util.List;
 public class JobSorter {
     public static void main(String[] args) {
         List<Job> jobs = Arrays.asList(
-        new Job("HiPriority", 1),
+        new Job("HiPriority", 3),
                 new Job("TheSameName", 2),
                 new Job("Very long name", 3),
                 new Job("ShortName", 4),

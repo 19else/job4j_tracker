@@ -38,12 +38,12 @@ public class JobTest {
     public void whenComparatorAscByNameAndPriority() {
         Comparator<Job> cmpNamePriority = new JobAscByName().thenComparing(new JobAscByPriority());
         int rsl = cmpNamePriority.compare(
-                new Job("TheLongName", 1),
-                new Job("ShortName", 0)
+                new Job("Tom", 2),
+                new Job("Tom", 3)
 
         );
         System.out.println(rsl);
-        assertThat(rsl, greaterThan(0));
+        assertThat(rsl, lessThan(0));
     }
 
     @Test

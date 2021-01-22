@@ -48,4 +48,25 @@ public class ItemTest {
         Collections.sort(items, new SortByNameCountdown());
         assertThat(items, is(expected));
     }
+
+    @Test
+    public void CompareSortById() {
+        List<Item> items = Arrays.asList(
+                new Item(1, "Merkel"),
+                new Item(3, "Chaves"),
+                new Item(2, "Trump"),
+                new Item(4, "Kennedy")
+        );
+        List<Item> expected = Arrays.asList(
+                new Item(2, "Trump"),
+                new Item(1, "Merkel"),
+                new Item(4, "Kennedy"),
+                new Item(3, "Chaves")
+        );
+
+        Collections.sort(items, new SortById());
+       // assertThat(items, is(expected));
+        System.out.println(items);
+
+    }
 }
