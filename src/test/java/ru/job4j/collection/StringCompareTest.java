@@ -61,4 +61,15 @@ public class StringCompareTest {
         System.out.println(rsl);
         assertThat(rsl, lessThan(0));
     }
+
+    @Test
+    public void whenLeftGreaterRightShouldBeNegative() {
+        StringCompare compare = new StringCompare();
+        int rsl = compare.compare(
+                "Велосипед",
+                "Як"
+        );
+        System.out.println(rsl);
+        assertThat(rsl, lessThan(0));
+    }
 }
