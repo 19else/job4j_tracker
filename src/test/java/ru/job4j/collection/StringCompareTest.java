@@ -72,4 +72,26 @@ public class StringCompareTest {
         System.out.println(rsl);
         assertThat(rsl, lessThan(0));
     }
+
+    @Test
+    public void whenLeftEmptyShouldBeNegative() {
+        StringCompare compare = new StringCompare();
+        int rsl = compare.compare(
+                "",
+                "NonEmpty"
+        );
+        System.out.println(rsl);
+        assertThat(rsl, lessThan(0));
+    }
+
+    @Test
+    public void whenRightEmptyShouldBePositive() {
+        StringCompare compare = new StringCompare();
+        int rsl = compare.compare(
+                "NonEmpty",
+                ""
+        );
+        System.out.println(rsl);
+        assertThat(rsl, greaterThan(0));
+    }
 }
