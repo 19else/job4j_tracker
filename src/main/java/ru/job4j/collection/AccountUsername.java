@@ -15,8 +15,12 @@ public class AccountUsername {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         AccountUsername accountUsername = (AccountUsername) o;
         return Objects.equals(username, accountUsername.username);
     }
@@ -24,16 +28,15 @@ public class AccountUsername {
     @Override
     public int hashCode() {
         return Objects.hashCode(username);
-
     }
 
     @Override
     public String toString() {
-        return "AccountUsername{" +
-                "passport='" + passport + '\'' +
-                ", username='" + username + '\'' +
-                ", deposit='" + deposit + '\'' +
-                '}';
+        return "AccountUsername{"
+                + "passport='" + passport + '\''
+                + ", username='" + username + '\''
+                + ", deposit='" + deposit + '\''
+                + '}';
     }
 }
 

@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 
-
 public class CountTest {
 
     @Test (expected = IllegalArgumentException.class)
@@ -15,7 +14,7 @@ public class CountTest {
 
     @Test
     public void when0then3() {
-        int rsl = Count.add(0,3);
+        int rsl = Count.add(0, 3);
         Assert.assertThat(rsl, is(3));
     }
 }

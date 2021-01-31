@@ -12,7 +12,7 @@ public class Profession {
         return name;
     }
 
-    public String getSurname(){
+    public String getSurname() {
         return surname;
     }
 

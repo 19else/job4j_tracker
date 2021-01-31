@@ -13,13 +13,14 @@ public class PhoneDictionary {
      * @param key Ключ поиска.
      * @return Список подощедщих пользователей.
      */
+
     public ArrayList<Person> find(String key) {
         ArrayList<Person> result = new ArrayList<>();
        for (Person person:persons) {
-           if(person.getSurname().contains(key) ||
-              person.getName().contains(key) ||
-              person.getAddress().contains(key) ||
-              person.getPhone().contains(key)) {
+           if (person.getSurname().contains(key)
+                   || person.getName().contains(key)
+                   || person.getAddress().contains(key)
+                   || person.getPhone().contains(key)) {
                result.add(person);
            }
         }

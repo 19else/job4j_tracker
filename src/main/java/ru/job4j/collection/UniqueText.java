@@ -12,13 +12,11 @@ public class UniqueText {
         for (String orig : origin) {
             check.add(orig);
         }
-        for (String word : text)
-             {
+        for (String word : text) {
                 if (!check.contains(word)) {
                     rlt = false;
                     break;
-                };
-
+                }
         }
         return rlt;
     }
@@ -31,12 +29,11 @@ public class UniqueText {
         boolean rsl = true;
         HashSet<String> check = new HashSet<>(Arrays.asList(extra));
         for (String checkWord:text2) {
-            if(!check.contains(checkWord)) {
+            if (!check.contains(checkWord)) {
                 rsl = false;
                 break;
             }
         }
-
         System.out.println(rsl);
     }
 }

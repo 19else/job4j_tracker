@@ -13,6 +13,7 @@ public class FactTest  {
             Assert.assertThat(rsl, Is.is(0));
 
     }
+
     @Test
     public void whenNGreaterThen0() {
             int rsl = Fact.calc(3);

@@ -9,8 +9,9 @@ import java.util.List;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class ConvertListTest{
-@Test
+public class ConvertListTest {
+
+    @Test
     public void whenToList() {
     List<int[]> in = new ArrayList<>();
     in.add(new int[] {1});

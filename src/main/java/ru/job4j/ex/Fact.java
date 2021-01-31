@@ -10,7 +10,7 @@ public class Fact {
         if (n < 0) {
             throw new IllegalArgumentException("N must be > 0");
         }
-        for (int index = 1; index < n ; index++) {
+        for (int index = 1; index < n; index++) {
             rlt *= index;
         }
         return rlt;

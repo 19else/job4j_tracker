@@ -7,7 +7,6 @@ public class College {
         Object obj = freshman;
         Object oFresh = new Freshman();
         Freshman freshFromObj = (Freshman) oFresh;
-
-
+        System.out.println(freshFromObj);
     }
 }

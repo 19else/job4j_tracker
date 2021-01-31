@@ -7,61 +7,62 @@ public class Exercise {
         Human human3 = new Human("Serg", 5);
            }
 
-    static class Human{
+    static class Human {
         private String name;
         private int age;
+
         public Human() {
             System.out.println("Пустой конструктор");
         }
+
         public Human(String name) {
             this.name = name;
             System.out.println("Конструктор с переменной String " + this.name);
         }
+
         public Human(String name, int age) {
             this.name = name;
             this.age = age;
             System.out.println("Привет из третьего конструктора " + this.name + ", " + this.age);
         }
 
-
         public void setName(String name) {
             this.name = name;
         }
-        public String getName() { return name; }
+
+        public String getName() {
+            return name;
+        }
+
         public void setAge(int age) {
             this.age = age;
         }
-        public int getAge() { return age;}
+
+        public int getAge() {
+            return age;
+        }
+
         public void getInfo() {
             System.out.println(name + " " + age);
         }
     }
 
-
-
-
-
-
-
-
-
-
         public static int calculate(int[] hours) {
             int rsl = 0;
             for (int index = 0; index < hours.length; index++) {
-                if(hours[index] <= 8) {
+                if (hours[index] <= 8) {
                     rsl = rsl + 10 * hours[index];
                 }
                 if (hours[index] > 8) {
                     rsl = rsl + 8 * 10 + (hours[index] - 8) * 15;
                 }
                 if (index > 4 && hours[index] != 0)  {
-                    rsl = hours[index] <= 8 ?  rsl + (hours[index] * 10)  : rsl + (8 * 10 + (hours[index] - 8) * 15);
+                    rsl = hours[index] <= 8
+                           ? rsl + (hours[index] * 10)  : rsl + (8 * 10 + (hours[index] - 8) * 15);
                 }
             }
             return rsl;
         }
-
 
         public static int calculate1(int[] hours) {
             int sum = 0;
@@ -95,9 +96,8 @@ public class Exercise {
             char l2 = left.charAt(1);
             char r1 = right.charAt(0);
             char r2 = right.charAt(1);
-            if (l1 == r1 | l2 == r2) { return true;}
-            return false;
-        }
+        return l1 == r1 | l2 == r2;
+    }
 
   /**  public static void main(String[] args) {
         System.out.println(check("A8", "E8"));
@@ -105,14 +105,5 @@ public class Exercise {
         System.out.println(check("A1", "B2"));
         System.out.println(check("F5", "C8"));
     } **/
-
-
-
-
-
-
-
-
-
 
 }

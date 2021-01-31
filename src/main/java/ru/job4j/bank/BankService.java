@@ -1,4 +1,5 @@
 package ru.job4j.bank;
+
 import java.util.*;
 
 public class BankService {
@@ -47,7 +48,8 @@ public class BankService {
                                  String destPassport, String destRequisite, double ammount) {
         Account userSrc = findByRequisite(srcPassport, srcRequisite);
         Account userDest = findByRequisite(destPassport, destRequisite);
-        if(userDest.getRequisite() != null && userSrc.getRequisite() != null && userSrc.getBalance() >= ammount) {
+        if (userDest.getRequisite() != null && userSrc.getRequisite() != null
+                                            && userSrc.getBalance() >= ammount) {
             userDest.setBalance(userDest.getBalance() + ammount);
             userSrc.setBalance(userSrc.getBalance() - ammount);
             return true;

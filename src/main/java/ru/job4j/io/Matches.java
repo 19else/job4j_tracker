@@ -6,8 +6,9 @@ public class Matches {
         Scanner input = new Scanner(System.in);
        int counter = 11;
         System.out.println("Привет! Это игра #Спички# Правила игры: ");
-        System.out.println("На столе лежат 11 спичек. Два игрока по очереди берут от 1 до 3 спичек. " +
-                "Выигрывает тот, кто забрал последние спички. ");
+        System.out.println("На столе лежат 11 спичек. "
+               + "Два игрока по очереди берут от 1 до 3 спичек. "
+                + "Выигрывает тот, кто забрал последние спички. ");
         boolean player = true;
         String name = "";
          while (counter > 0) {

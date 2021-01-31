@@ -12,14 +12,12 @@ public class HierarchyUsage {
         Object ocar = new Car();
         /*Приведение типа за счет повышения иерархии*/
         Car carFromObject = (Car) ocar;
-
-     //   /*Ошибка приведения типа*/
-       // Object bicycle = new Bicycle();
-      //  Transport bicycle1 = (Bicycle) bicycle; // код завершится ошибкой приведения типов ClassCastException
-
+        //   /*Ошибка приведения типа*/
+        // Object bicycle = new Bicycle();
+        //  Transport bicycle1 = (Bicycle) bicycle;
+        // код завершится ошибкой приведения типов ClassCastException
         System.out.println(new Car());
         System.out.println(new Bicycle());
         System.out.println(new Object());
-
     }
 }

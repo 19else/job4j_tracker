@@ -94,4 +94,15 @@ public class StringCompareTest {
         System.out.println(rsl);
         assertThat(rsl, greaterThan(0));
     }
+
+    @Test
+    public void whenRightAndLeftSetNumberShouldBePositive() {
+        StringCompare compare = new StringCompare();
+        int rsl = compare.compare(
+                "12",
+                "1"
+        );
+        System.out.println(rsl);
+        assertThat(rsl, greaterThan(0));
+    }
 }

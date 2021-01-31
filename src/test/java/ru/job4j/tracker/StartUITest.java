@@ -74,8 +74,8 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu: " + System.lineSeparator() +
-                        "0. Exit" + System.lineSeparator()
+                "Menu: " + System.lineSeparator()
+                        + "0. Exit" + System.lineSeparator()
         ));
     }
 
@@ -93,7 +93,7 @@ public class StartUITest {
                 new EndAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is ("Menu: " + LN
+        assertThat(out.toString(), is("Menu: " + LN
                 +  "0. Print all items" + LN
                 +  "1. Exit" + LN
                 + "=== Print all items ===" + LN
@@ -105,7 +105,7 @@ public class StartUITest {
     }
 
     @Test
-    public void WhenFindByName() {
+    public void whenFindByName() {
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[] {"0", "Kuzmith", "1"}
@@ -118,14 +118,12 @@ public class StartUITest {
                 new EndAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is (
+        assertThat(out.toString(), is(
                 "Menu: " + LN
-                        + "0. === Find by Name ==="+ LN
+                        + "0. === Find by Name ===" + LN
                         + "1. Exit" + LN
                         + "=== Find items by name ==="
                         + LN + "Item name's : Item{id=1, name='Kuzmith'}" + LN
-
-
         ));
     }
 
@@ -144,9 +142,9 @@ public class StartUITest {
 
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is (
+        assertThat(out.toString(), is(
                 "Menu: " + LN
-                        + "0. === Find by ID ==="+ LN
+                        + "0. === Find by ID ===" + LN
                         + "1. Exit" + LN
                         + "=== Find Item by Id ===" + LN
                         + "Item Item{id=1, name='Petrovich'}" + LN

@@ -6,21 +6,24 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class BankServiceTest {
-@Test
+
+    @Test
     public void testAddUser() {
     User user = new User("3432", "Sergey");
     BankService bank = new BankService();
     bank.addUser(user);
     assertThat(bank.findByPassport("3432"), is(user));
     }
-@Test
-    public void WhenInvalidPassport() {
+
+    @Test
+    public void whenInvalidPassport() {
     User user = new User("123", "Semen");
     BankService bank = new BankService();
     bank.addUser(user);
     bank.addAccount(user.getPassport(), new Account("456", 150D));
     assertNull(bank.findByRequisite("34", "5546"));
     }
+
     @Test
     public void addAccount() {
     User user = new User("123", "Tom");

@@ -23,6 +23,7 @@ public class PriorityQueue {
         this.tasks.add(index, task);
     }
  //Метод take возвращает первый элемент из списка и удаляет его.
+
     public Task take() {
         return tasks.poll();
     }

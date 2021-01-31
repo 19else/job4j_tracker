@@ -6,6 +6,18 @@ public class Item implements Comparable<Item> {
     private int id;
     private String name;
 
+    public Item() {
+    }
+
+    public Item(String name) {
+        this.name = name;
+    }
+
+    public Item(int number, String surname) {
+        this.id = number;
+        this.name = surname;
+    }
+
     public int getId() {
         return id;
     }
@@ -22,31 +34,19 @@ public class Item implements Comparable<Item> {
         this.name = name;
     }
 
-    public Item() {
-    }
-
-    public Item(String name) {
-        this.name = name;
-    }
-
-    public Item(int number, String surname) {
-        this.id = number ;
-        this.name = surname;
-    }
-
     @Override
     public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+        return "Item{"
+                + "id=" + id
+                + ", name='" + name
+                + '\''
+                + '}';
     }
 
     @Override
     public int compareTo(Item o) {
         return Integer.compare(id, o.id);
     }
-
 
     @Override
     public int hashCode() {
@@ -55,8 +55,12 @@ public class Item implements Comparable<Item> {
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj) return false;
-        if(obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj) {
+            return false;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
         Item item = (Item) obj;
         return id == item.id && Objects.equals(name, item.name);
     }

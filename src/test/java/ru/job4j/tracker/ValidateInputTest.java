@@ -26,7 +26,7 @@ public class ValidateInputTest {
                             + "Menu: %n"
                             + "0. Exit%n"
             )
-    ) );
+    ));
     }
 
     @Test

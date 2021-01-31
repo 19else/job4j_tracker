@@ -15,6 +15,4 @@ public class ConsoleInput implements Input {
         System.out.println(question);
         return Integer.valueOf(scanner.nextLine());
     }
-
-
 }

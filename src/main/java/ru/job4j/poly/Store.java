@@ -4,5 +4,5 @@ public interface Store {
 
     void save(String value);
 
-    String [] load();
+    String[] load();
 }

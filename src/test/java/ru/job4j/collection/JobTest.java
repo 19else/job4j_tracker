@@ -14,7 +14,9 @@ import static org.hamcrest.Matchers.lessThan;
 public class JobTest {
     @Test
     public void whenComparatorByNameAndPriority() {
-        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
+        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(
+                new JobDescByPriority()
+        );
         int rsl = cmpNamePriority.compare(
                 new Job("Impl Task", 0),
                 new Job("Fix Bug", 1)
@@ -25,7 +27,9 @@ public class JobTest {
 
     @Test
     public void whenComparatorByNameAndPriorityTwo() {
-        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
+        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(
+                new JobDescByPriority()
+        );
         int rsl = cmpNamePriority.compare(
                 new Job("Bob", 1),
                 new Job("Bob", 0)
@@ -47,7 +51,7 @@ public class JobTest {
     }
 
     @Test
-    public void ComparatorJobAscByName() {
+    public void comparatorJobAscByName() {
         Comparator<Job> ascByName = new JobAscByName();
         int rsl = ascByName.compare(
                 new Job("TheLongName", 3),
@@ -59,7 +63,7 @@ public class JobTest {
     }
 
     @Test
-    public void ComparatorJobAscByPriority() {
+    public void comparatorJobAscByPriority() {
         Comparator<Job> ascPriority = new JobAscByPriority();
         List<Job> priority = Arrays.asList(
                 new Job("A", 4),
@@ -73,7 +77,7 @@ public class JobTest {
     }
 
     @Test
-    public void ComparatorJobAscByPriorityTwo() {
+    public void comparatorJobAscByPriorityTwo() {
         Comparator<Job> ascPriority = new JobAscByPriority();
         int rsl = ascPriority.compare(
                 new Job("A", 3),

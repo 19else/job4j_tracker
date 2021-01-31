@@ -1,4 +1,4 @@
 package ru.job4j.oop;
 
-public class Students extends Object{
+public class Students extends Object {
 }

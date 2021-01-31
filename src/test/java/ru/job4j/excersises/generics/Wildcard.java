@@ -13,11 +13,10 @@ public class Wildcard {
         listOfDog.add(new Dog());
        test(listOfAnimal);
        test(listOfDog);
-
-
     }
 
-    private static void test(List<? extends Animal> list) { // ? массив объектов - которые наследуют класс Animal
+    private static void test(List<? extends Animal> list) {
+        // ? массив объектов - которые наследуют класс Animal
         for (Animal animal: list) { // пройтись по всем спискам класса animal
          //   System.out.println(animal);
             animal.eat();

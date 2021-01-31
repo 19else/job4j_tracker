@@ -10,25 +10,12 @@ public class StringCompare implements Comparator<String> {
         int min = Math.min(left, right);
         for (int i = 0; i < min; i++) {
             int rsl = Character.compare(o1.charAt(i), o2.charAt(i));
-            if ( rsl != 0) return rsl;
+            if (rsl != 0) {
+                return rsl;
             }
+        }
         return Integer.compare(left, right);
     }
 }
 
-
-
-//        int count = 0;
-//        if (o1.length() == o2.length()) {
-//            while (count < o2.length()) {
-//                int comp = Character.compare(o1.charAt(count), o2.charAt(count));
-//                if (comp == 0) {
-//                    count++;
-//                } else {
-//                    return Integer.compare(o1.charAt(count), o2.charAt(count));
-//                }
-//            }
-//        }
-//        return Integer.compare(o1.length(), o2.length());
-//    }
 

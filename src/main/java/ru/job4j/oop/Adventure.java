@@ -11,7 +11,7 @@ public class Adventure {
         fox.kill(ball);
         int n = 0;
         int m = 5;
-            for(int index = n;  index < m; index++) {
+            for (int index = n;  index < m; index++) {
                 System.out.println(index);
             }
         }

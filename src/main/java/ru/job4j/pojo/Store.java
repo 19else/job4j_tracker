@@ -10,7 +10,7 @@ public class Store {
         prods[1] = bread;
         prods[2] = eggs;
         for (int index = 0; index < prods.length; index++) {
-            Product pr = prods [index];
+            Product pr = prods[index];
             System.out.println(pr.getName() + " - " + pr.getCount() + " руб");
         }
         System.out.println("Заменим молоко на растительное масло");
@@ -23,7 +23,7 @@ public class Store {
         System.out.println("Выведем только продукты дороже 80 рублей");
         for (int index = 0; index < prods.length; index++) {
             Product pr = prods[index];
-            if(pr.getCount() > 80) {
+            if (pr.getCount() > 80) {
                 System.out.println(pr.getName() + " - " + pr.getCount() + " руб");
             }
         }

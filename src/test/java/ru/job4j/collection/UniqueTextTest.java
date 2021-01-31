@@ -7,12 +7,14 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class UniqueTextTest {
-@Test
+
+    @Test
     public void testIsEquals() {
     String origin = "My cat eats a mouse and milk";
     String text = "My cat eats milk and a mouse";
-    assertThat(UniqueText.isEquals(origin, text), is (true));
+    assertThat(UniqueText.isEquals(origin, text), is(true));
     }
+
    @Test
     public void testIsNotEquals() {
     String origin = "My cat eats a mouse";

@@ -4,7 +4,7 @@ public class Shop {
 
     public static int indexOfNull(Product[] products) {
         for (int i = 0; i < products.length; i++) {
-            if(products[i] == null) {
+            if (products[i] == null) {
                 return i;
             }
         }
@@ -18,7 +18,7 @@ public class Shop {
         products[2] = new Product("Egg", 25);
         for (int i = 0; i < products.length; i++) {
             Product prod = products[i];
-            if(prod != null) {
+            if (prod != null) {
                 System.out.println(prod.getName());
             }
         }

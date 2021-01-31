@@ -8,13 +8,15 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 public class PassportOfficeTest {
-@Test
+
+    @Test
     public void testAdd() {
     Citizen citizen = new Citizen("ab 123", "Sergey Elovikov");
     PassportOffice passportOffice = new PassportOffice();
     passportOffice.add(citizen);
     assertThat(passportOffice.get(citizen.getPassport()), is(citizen));
     }
+
     @Test
     public void whenReturnNull() {
         Citizen citizen = new Citizen("ab 123", "Sergey Elovikov");

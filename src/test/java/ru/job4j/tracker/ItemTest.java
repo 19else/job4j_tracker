@@ -11,7 +11,7 @@ import static org.hamcrest.core.Is.is;
 
 public class ItemTest {
     @Test
-    public void CompareToUp() {
+    public void compareToUp() {
         List<Item> items = Arrays.asList(
                 new Item(1, "Merkel"),
                 new Item(3, "Chaves"),
@@ -31,7 +31,7 @@ public class ItemTest {
     }
 
     @Test
-    public void CompareToDown() {
+    public void compareToDown() {
         List<Item> items = Arrays.asList(
                 new Item(1, "Merkel"),
                 new Item(3, "Chaves"),
@@ -50,7 +50,7 @@ public class ItemTest {
     }
 
     @Test
-    public void CompareSortById() {
+    public void compareSortById() {
         List<Item> items = Arrays.asList(
                 new Item(1, "Merkel"),
                 new Item(3, "Chaves"),
@@ -65,8 +65,7 @@ public class ItemTest {
         );
 
         Collections.sort(items, new SortById());
-       // assertThat(items, is(expected));
+        //assertThat(items, is(expected));
         System.out.println(items);
-
     }
 }

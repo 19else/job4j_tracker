@@ -8,8 +8,7 @@ public class College {
         student.setFullName("Иванов Иван Иванович");
         student.setGroup("#5204");
         student.setReceiptDate(new Date());
-
-        System.out.println(student.getFullName() + " студент группы - " + student.getGroup() + " Дата поступления: "
-        + student.getReceiptDate());
+        System.out.println(student.getFullName() + " студент группы - " + student.getGroup()
+                + " Дата поступления: " + student.getReceiptDate());
     }
 }

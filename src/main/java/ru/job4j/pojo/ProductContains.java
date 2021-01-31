@@ -9,7 +9,7 @@ public class ProductContains {
         int n = 10;
         int price = 1;
 
-        for(int index = 1; 6 > index; index++) {
+        for (int index = 1; 6 > index; index++) {
             System.out.println(price * index);
         }
     }
