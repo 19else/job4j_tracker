@@ -61,7 +61,7 @@ public class Tracker {
         if (index == -1) {
             return false;
         }
-        items.remove(id);
+        items.remove(index);
         return true;
     }
 }
