@@ -61,14 +61,26 @@ public class DepartmentTest {
     @Test
     public void sortDesc() {
         List<String> input = Arrays.asList(
-                "K1/SK1",
                 "K1",
-                "K1/SK1/SSK1"
+                "K1/SK1",
+                "K1/SK1/SSK1",
+                "K1/SK1/SSK2",
+                "K1/SK2",
+                "K2",
+                "K2/SK1",
+                "K2/SK1/SSK1",
+                "K2/SK1/SSK2"
         );
         List<String> expected = Arrays.asList(
-                "K1/SK1/SSK1",
+                "K2",
+                "K2/SK1",
+                "K2/SK1/SSK1",
+                "K2/SK1/SSK2",
+                "K1",
                 "K1/SK1",
-                "K1"
+                "K1/SK1/SSK1",
+                "K1/SK1/SSK2",
+                "K1/SK2"
         );
         Department.sortDesc(input);
         assertThat(input, is(expected));
