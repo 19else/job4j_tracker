@@ -27,3 +27,4 @@ public class Department {
         orgs.sort(new DepDescComp());
     }
 }
+
