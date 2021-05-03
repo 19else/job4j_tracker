@@ -10,11 +10,12 @@ public class Article {
         String[] lineText = line.toLowerCase().split("[!,.; ]");
         HashSet<String> checker = new HashSet<>();
         Collections.addAll(checker, originText);
-        for (String lineCheck : lineText)
+        for (String lineCheck : lineText) {
             if (!checker.contains(lineCheck)) {
                 result = false;
                 break;
             }
+        }
         return result;
     }
 
