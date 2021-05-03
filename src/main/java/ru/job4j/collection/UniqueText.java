@@ -1,6 +1,7 @@
 package ru.job4j.collection;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 
 public class UniqueText {
@@ -9,9 +10,7 @@ public class UniqueText {
         String[] origin = originText.split(" ");
         String[] text = duplicateText.split(" ");
         HashSet<String> check = new HashSet<>();
-        for (String orig : origin) {
-            check.add(orig);
-        }
+        Collections.addAll(check, origin);
         for (String word : text) {
                 if (!check.contains(word)) {
                     rlt = false;
@@ -23,7 +22,8 @@ public class UniqueText {
 
     public static void main(String[] args) {
         String origin = "My cat eats a mouse";
-        String text = "A mouse is eating by a cat";
+        System.out.println(origin.toLowerCase());
+        String text = "my cat eats a mouse";
         String[] extra = origin.split(" ");
         String[] text2 = text.split(" ");
         boolean rsl = true;

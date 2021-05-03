@@ -7,24 +7,22 @@ public class Article {
     public static boolean generateBy(String origin, String line) {
         boolean result = true;
         String[] originText = origin.toLowerCase().split("[!,.; ]");
-        String[] lineText = line.toLowerCase().split("\\!|\\,|\\.|\\;| ");
+        String[] lineText = line.toLowerCase().split("[!,.; ]");
         HashSet<String> checker = new HashSet<>();
-        for (String oneWord : originText) {
-            checker.add(oneWord);
-        }
-        for (String lineCheck : lineText) {
+        Collections.addAll(checker, originText);
+        for (String lineCheck : lineText)
             if (!checker.contains(lineCheck)) {
                 result = false;
                 break;
             }
-        }
         return result;
     }
 
     public static boolean generateBy2(String origin, String line) {
         boolean result = true;
         HashSet<String> check = new HashSet<>();
-        String lowCaseOrigin = origin.toLowerCase().replaceAll("\\p{P}", ""); //убирает знаки препинания
+        //убираем знаки препинания
+        String lowCaseOrigin = origin.toLowerCase().replaceAll("\\p{P}", "");
         String lowCaseLine = line.toLowerCase().replaceAll("\\p{P}", "");
         String[] source = lowCaseOrigin.split(" ");
         String[] lineArr = lowCaseLine.split(" ");
