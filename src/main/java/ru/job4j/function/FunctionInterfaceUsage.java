@@ -26,19 +26,16 @@ public class FunctionInterfaceUsage {
         Supplier<String> sup1 = () -> "New String For Interface";
         BiConsumer<String, String> consumer1 = (s, s1) -> System.out.println(s + s1);
         consumer1.accept(sup1.get(), " and Second String");
-//        System.out.println(sup.get());
-//        for (String s : strings) {
-//            System.out.println(s);
-//        }
 
-        // Predicate (BiPredicate)
         Predicate<String> predicate = s -> s.isEmpty();
         System.out.println("Строка пустая " + predicate.test(""));
         System.out.println("Строка пустая " + predicate.test("test"));
 
         BiPredicate<String, Integer> cond = (str, integ) -> str.contains(integ.toString());
-        System.out.println("Строка содержит подстроку: " + cond.test("name123", 123));
-        System.out.println("Строка содержит подстроку: " + cond.test("Name", 456));
+        System.out.println("Строка содержит подстроку: "
+                + cond.test("name123", 123));
+        System.out.println("Строка содержит подстроку: "
+                + cond.test("Name", 456));
 
         // Function
         Function<String, Character> func = s -> s.charAt(2);
@@ -47,13 +44,17 @@ public class FunctionInterfaceUsage {
 
         //BiFunction
         BiFunction<String, Integer, String> biFunc = (s, n) -> s.concat(" ").concat(n.toString());
-        System.out.println("Результат работающей бифункции: " + biFunc.apply("Name", 123));
-        System.out.println("Результат работающей бифункции: " + biFunc.apply("String number",12345));
+        System.out.println("Результат работающей бифункции: "
+                + biFunc.apply("Name", 123));
+        System.out.println("Результат работающей бифункции: "
+                + biFunc.apply("String number", 12345));
 
         //UnaryOperator и
         UnaryOperator<StringBuilder> builder = b -> b.reverse();
-        System.out.println("Строка после реверса: " + builder.apply(new StringBuilder("Главрыба")));
-        System.out.println("Строка после реверса: " + builder.apply(new StringBuilder("абырвалГ")));
+        System.out.println("Строка после реверса: "
+                + builder.apply(new StringBuilder("Главрыба")));
+        System.out.println("Строка после реверса: "
+                + builder.apply(new StringBuilder("абырвалГ")));
 
         //BinaryOperator
         BinaryOperator<StringBuilder> binaryOperator = (b1, b2) -> b1.append(" ").append(b2);
