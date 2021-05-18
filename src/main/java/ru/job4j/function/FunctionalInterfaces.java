@@ -6,7 +6,8 @@ import java.util.function.*;
 public class FunctionalInterfaces {
     public static void main(String[] args) {
         Map<Integer, String> map = new HashMap<>();
-        BiConsumer<Integer, String> biConsumer = (l, l1) -> map.put(l, l1);
+        BiConsumer<Integer, String> biConsumer = (integerNumber, stringVar)
+                -> map.put(integerNumber, stringVar);
         biConsumer.accept(1, "one");
         biConsumer.accept(2, "two");
         biConsumer.accept(3, "three");
@@ -15,21 +16,16 @@ public class FunctionalInterfaces {
         biConsumer.accept(6, "six");
         biConsumer.accept(7, "seven");
 
-        System.out.println(map);
-
-        BiPredicate<Integer, String> biPredicate = (num, word) -> num % 2 == 0 || map.size() == 4;
+        BiPredicate<Integer, String> biPredicate = (num, word)
+                -> num % 2 == 0 || word.length() == 4;
         for (Integer i : map.keySet()) {
             if (biPredicate.test(i, map.get(i))) {
-                System.out.println("biPredicate => " + "key: " + i + " value " + map.get(i));
+                System.out.println("if: " + "key: " + i + " value: " + map.get(i));
             }
         }
-
         Supplier<List<String>> supplier = () -> new ArrayList<>(map.values());
-
-        Consumer<String> con = (s) -> System.out.println(s);
-
-        Function<String, String> function = upCase -> upCase.toUpperCase();
-
+        Consumer<String> con = System.out::println;
+        Function<String, String> function = String::toUpperCase;
         con.accept(function.apply(supplier.get().toString()));
     }
 }

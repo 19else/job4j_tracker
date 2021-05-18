@@ -6,7 +6,8 @@ import java.util.function.*;
 
 public class FunctionInterfaceUsage {
     public static void main(String[] args) {
-        //при объявлении функционального интерфейса мы указываем два типа обобщения и в лямбду,
+        //при объявлении функционального интерфейса
+        // мы указываем два типа обобщения и в лямбду,
         // соответственно, передаем 2 параметра.
         List<String> list = List.of("one", "two", "three", "one", "two", "three");
         Supplier<Set<String>> supplier = () -> new HashSet<>(list);
