@@ -8,6 +8,7 @@ public class FunctionalInterfaces {
         Map<Integer, String> map = new HashMap<>();
         BiConsumer<Integer, String> biConsumer = (integerNumber, stringVar)
                 -> map.put(integerNumber, stringVar);
+
         biConsumer.accept(1, "one");
         biConsumer.accept(2, "two");
         biConsumer.accept(3, "three");
@@ -27,5 +28,8 @@ public class FunctionalInterfaces {
         Consumer<String> con = System.out::println;
         Function<String, String> function = String::toUpperCase;
         con.accept(function.apply(supplier.get().toString()));
+        for (String s : supplier.get())  {
+            System.out.println(s + " is ->" + function.apply(s));
+        }
     }
 }
