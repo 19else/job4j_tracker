@@ -29,7 +29,7 @@ public class FunctionalInterfaces {
         Function<String, String> function = String::toUpperCase;
         con.accept(function.apply(supplier.get().toString()));
         for (String s : supplier.get())  {
-            System.out.println(s + " is ->" + function.apply(s));
+             con.accept(function.apply(s));
         }
     }
 }
