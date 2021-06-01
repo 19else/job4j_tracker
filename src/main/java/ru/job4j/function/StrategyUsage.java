@@ -42,8 +42,8 @@ public class StrategyUsage {
         System.out.println("boolean predicateStartWith: " + usage.predicateStartWith(
                 "Andrey", "A"));
         //Use Predicate
-        System.out.println("Используем один метод check " +
-                " с разными экземплярами Predicate: ");
+        System.out.println("Используем один метод check "
+                + " с разными экземплярами Predicate: ");
         System.out.println("Результат работы: " + usage.check(
                 String::isEmpty, ""));
         System.out.println("Результат работы: " + usage.check(
