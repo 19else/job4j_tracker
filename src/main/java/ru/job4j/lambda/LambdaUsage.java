@@ -22,7 +22,6 @@ public class LambdaUsage {
             int second = Integer.valueOf(o2.substring(0, o2.indexOf(".")));
             System.out.println("compare - " + first + " : " + second);
             return Integer.compare(second, first);
-
         };
         Arrays.sort(names, cmpText);
         System.out.println("Sort Ascending = " + Arrays.toString(names));
