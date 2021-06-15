@@ -1,7 +1,6 @@
 package ru.job4j.steam;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class SteamUsage {
     public static class Task {
