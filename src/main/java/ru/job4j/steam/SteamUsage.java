@@ -24,15 +24,16 @@ public class SteamUsage {
 
     public static void main(String[] args) {
         List<Task> tasks = List.of(
-                new Task("Bug 1", 100),
-                new Task("Bug 3", 100),
+                new Task("Bug 1", 10),
+                new Task("Bug 3", 20),
                 new Task("Fix 2", 100),
                 new Task("Bug 4", 200),
-                new Task("Bug 5", 100)
+                new Task("Bug 5", 300)
         );
-        List<Task> bugs = tasks.stream().filter(
-                task -> task.name.contains("Bug")
-        ).collect(Collectors.toList());
-        bugs.forEach(System.out::println);
+        tasks.stream()
+                .filter(task -> task.name.contains("Bug"))
+                .filter(task -> task.spend > 30)
+                .map(task -> task.name + " " + task.spend)
+                .forEach(System.out::println);
     }
 }
