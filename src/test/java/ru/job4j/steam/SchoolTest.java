@@ -4,7 +4,9 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 
 import static org.hamcrest.core.Is.is;
@@ -68,6 +70,24 @@ public class SchoolTest {
         expected.add(new Student(10, "Surname1"));
         expected.add(new Student(30, "Surname3"));
         expected.add(new Student(40, "Surname4"));
+        assertThat(rsl, is(expected));
+    }
+
+    @Test
+    public void whenCollectListToMap() {
+        List<Student> students = Arrays.asList(
+                new Student(10, "Ivanov"),
+                new Student(20, "Petrov"),
+                new Student(30, "Sidorov"),
+                new Student(40, "Ivanov"),
+                new Student(50, "Sidorov")
+        );
+        School school = new School();
+        Map<String, Object> rsl = school.collectListToMap(students);
+        List<Student> expected = new ArrayList<>();
+        expected.add(new Student(40, "Ivanov"));
+        expected.add(new Student(20, "Petrov"));
+        expected.add(new Student(50, "Sidorov"));
         assertThat(rsl, is(expected));
     }
 }
