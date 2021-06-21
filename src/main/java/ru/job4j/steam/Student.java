@@ -32,6 +32,9 @@ public class Student {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
+//        Student student = (Student) obj;
+//        return score == student.score
+//                && Objects.equals(surname, student.surname);
         Student student = (Student) obj;
         return score == student.score
                 && Objects.equals(surname, student.surname);
