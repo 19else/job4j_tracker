@@ -3,10 +3,7 @@ package ru.job4j.steam;
 import junit.framework.TestCase;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Predicate;
 
 import static org.hamcrest.core.Is.is;
@@ -83,11 +80,11 @@ public class SchoolTest {
                 new Student(50, "Sidorov")
         );
         School school = new School();
-        Map<String, Object> rsl = school.collectListToMap(students);
-        List<Student> expected = new ArrayList<>();
-        expected.add(new Student(40, "Ivanov"));
-        expected.add(new Student(20, "Petrov"));
-        expected.add(new Student(50, "Sidorov"));
-        assertThat(rsl, is(expected));
+        Map<String, Student> rsl = school.collectListToMap(students);
+        HashMap<String, Student> map = new HashMap();
+        map.put("Petrov", rsl.get("Petrov"));
+        map.put("Sidorov", rsl.get("Sidorov"));
+        map.put("Ivanov", rsl.get("Ivanov"));
+        assertThat(rsl, is(map));
     }
 }
