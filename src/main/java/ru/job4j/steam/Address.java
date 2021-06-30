@@ -54,7 +54,6 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address = {" + "City = " + city + '\''
-                + "Street = " + street;
+        return String.format("Address: {City: %s  Street: %s Home %d Apartment %d", city, street, home, apartment);
     }
 }

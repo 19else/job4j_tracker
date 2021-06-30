@@ -47,11 +47,9 @@ public class ArbitraryMatrix {
         );
         System.out.println("Integer[][] nums : " + Arrays.deepToString(nums)
                 + "  Integer[][] nums2 : " + Arrays.deepToString(nums2));
-        List<Integer[]> rsl = matrixQuad.stream()
-                .flatMap(e -> Arrays.stream(e))
-                .collect(Collectors.toList());
         System.out.println("List<Integer[][]> to List<Integer[]> by flatMap: "
-                + Arrays.deepToString(rsl.toArray()));
+                + Arrays.deepToString(matrixQuad.stream()
+                .flatMap(Arrays::stream).toArray()));
 
         List<Integer[]> res = matrixQuad.stream()
                 .flatMap(e -> Arrays.stream(e))
@@ -60,7 +58,6 @@ public class ArbitraryMatrix {
 //        System.out.println("rsl[0] = " + Arrays.deepToString(rsl.get(0)));
 //        rsl.set(0, new Integer[] {7, 8, 9, 10});
 //        System.out.println("new rsl[0] = " + Arrays.deepToString(rsl.get(0)));
-
     }
 
     public List<Integer> transform(Integer[][] dim) {

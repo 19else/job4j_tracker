@@ -58,5 +58,6 @@ public class ProfilesTest {
         );
         List<Address> rsl = profiles.collect(compareList);
         assertThat(rsl, is(addressList));
+        System.out.println(rsl);
     }
 }
