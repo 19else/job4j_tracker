@@ -20,14 +20,7 @@ public class BankService {
         }
     }
 
-    //*
     public User findByPassport(String passport) {
-//        for (User pass : users.keySet()) {
-//            if (pass.getPassport().contains(passport)) {
-//                return pass;
-//            }
-//        }
-//        return null;
         return users.keySet().stream()
                 .filter(p -> p.getPassport().equals(passport))
                 .findFirst()
@@ -35,18 +28,6 @@ public class BankService {
     }
 
     public Account findByRequisite(String passport, String requisite) {
-//        User user = findByPassport(passport);
-//        if (user == null) {
-//            System.out.println("User not found");
-//            return null;
-//        }
-//        List<Account> account = users.get(user);
-//        for (Account req : account) {
-//            if (req.getRequisite().equals(requisite)) {
-//                return req;
-//            }
-//        }
-//        return null;
         User user = findByPassport(passport);
         List<Account> accounts = users.get(user);
         if (user != null) {
