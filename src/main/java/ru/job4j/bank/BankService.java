@@ -20,27 +20,43 @@ public class BankService {
         }
     }
 
+    //*
     public User findByPassport(String passport) {
-        for (User pass : users.keySet()) {
-            if (pass.getPassport().contains(passport)) {
-                return pass;
-            }
-        }
-        return null;
+//        for (User pass : users.keySet()) {
+//            if (pass.getPassport().contains(passport)) {
+//                return pass;
+//            }
+//        }
+//        return null;
+        return users.keySet().stream()
+                .filter(p -> p.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     public Account findByRequisite(String passport, String requisite) {
+//        User user = findByPassport(passport);
+//        if (user == null) {
+//            System.out.println("User not found");
+//            return null;
+//        }
+//        List<Account> account = users.get(user);
+//        for (Account req : account) {
+//            if (req.getRequisite().equals(requisite)) {
+//                return req;
+//            }
+//        }
+//        return null;
         User user = findByPassport(passport);
-        if (user == null) {
-            System.out.println("User not found");
-            return null;
+        List<Account> accounts = users.get(user);
+        if (user != null) {
+            return accounts
+                    .stream()
+                    .filter(r -> r.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
-        List<Account> account = users.get(user);
-        for (Account req : account) {
-            if (req.getRequisite().equals(requisite)) {
-                return req;
-            }
-        }
+        System.out.println("User not found");
         return null;
     }
 
@@ -49,7 +65,7 @@ public class BankService {
         Account userSrc = findByRequisite(srcPassport, srcRequisite);
         Account userDest = findByRequisite(destPassport, destRequisite);
         if (userDest.getRequisite() != null && userSrc.getRequisite() != null
-                                            && userSrc.getBalance() >= ammount) {
+                && userSrc.getBalance() >= ammount) {
             userDest.setBalance(userDest.getBalance() + ammount);
             userSrc.setBalance(userSrc.getBalance() - ammount);
             return true;
