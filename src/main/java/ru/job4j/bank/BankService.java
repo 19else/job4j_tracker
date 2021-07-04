@@ -29,8 +29,8 @@ public class BankService {
 
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
-        List<Account> accounts = users.get(user);
         if (user != null) {
+            List<Account> accounts = users.get(user);
             return accounts
                     .stream()
                     .filter(r -> r.getRequisite().equals(requisite))
@@ -58,6 +58,7 @@ public class BankService {
         List<Account> accountList = new ArrayList<>();
         String requisite = "2brgdg3";
         accountList.add(new Account("2brgdg3", 150));
+        accountList.add(new Account("abcd1234", 200));
         int index = accountList.indexOf(new Account(requisite, -1));
         Account find = accountList.get(index);
         System.out.println("Реквизиты: " + find.getRequisite() + " Баланс:  " + find.getBalance());
