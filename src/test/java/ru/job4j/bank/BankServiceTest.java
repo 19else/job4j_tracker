@@ -35,7 +35,7 @@ public class BankServiceTest {
 
     @Test
     public void whenUserNotFound() {
-        User user = new User("12", "NotFound");
+        User user = new User("", "NotFound");
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("123", 500));
