@@ -37,8 +37,6 @@ public class BankServiceTest {
     public void whenUserNotFound() {
         User user = new User("", "NotFound");
         BankService bank = new BankService();
-        bank.addUser(user);
-        bank.addAccount(user.getPassport(), new Account("123", 500));
-        assertThat(bank.findByRequisite("1234", "23").getBalance(), is(0.0D));
+        assertNull(bank.findByPassport("456"));
     }
 }
