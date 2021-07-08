@@ -1,9 +1,5 @@
 package ru.job4j.steam;
 
-import ru.job4j.ex.Book;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
