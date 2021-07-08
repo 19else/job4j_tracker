@@ -15,18 +15,6 @@ public class User {
 
     }
 
-    public User(String name, String surname, byte age,
-                String login, String password, boolean activated,
-                String gender) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.login = login;
-        this.password = password;
-        this.activated = activated;
-        this.gender = gender;
-    }
-
     static class Builder {
         private String name;
         private String surname;
@@ -106,7 +94,7 @@ public class User {
                 .buildPassword("123456")
                 .buildSurname("Surname")
                 .build();
-        
+
         User user1 = new Builder().buildName("UserTwo")
                 .buildSurname("SurnameTwo")
                 .buildGender("female")

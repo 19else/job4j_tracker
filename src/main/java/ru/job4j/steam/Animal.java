@@ -15,20 +15,6 @@ public class Animal {
 
     }
 
-    public Animal(String fish, String amphibian, String bird,
-                  String reptile, String beast, int size,
-                  double weight, boolean fly, boolean swim) {
-        this.fish = fish;
-        this.amphibian = amphibian;
-        this.bird = bird;
-        this.reptile = reptile;
-        this.beast = beast;
-        this.size = size;
-        this.weight = weight;
-        this.fly = fly;
-        this.swim = swim;
-    }
-
     static class Builder {
         private String fish;
         private String amphibian;
