@@ -9,7 +9,7 @@ public class PhoneDictionaryTest {
 
     @Test
     public void whenFindByName() {
-        PhoneDictionary phones = new PhoneDictionary();
+        var phones = new PhoneDictionary();
         phones.add(
                 new Person("Petr", "Arsentev", "741852", "Bryansk")
         );
@@ -19,7 +19,7 @@ public class PhoneDictionaryTest {
 
     @Test
     public void whenFindByNameByPredict() {
-        PhoneDictionary phone = new PhoneDictionary();
+        var phone = new PhoneDictionary();
         phone.add(
                 new Person("Sergey", "Elovikov", "1234567", "Korolev")
         );
@@ -29,12 +29,11 @@ public class PhoneDictionaryTest {
 
     @Test
     public void whenFindByPhone() {
-        PhoneDictionary phone = new PhoneDictionary();
+        var phone = new PhoneDictionary();
         phone.add(
                 new Person("Sergey", "Elovikov", "1234567", "Korolev")
         );
         ArrayList<Person> persons = phone.find("Elovikov");
         Assert.assertThat(persons.get(0).getPhone(), is("1234567"));
-
     }
 }
