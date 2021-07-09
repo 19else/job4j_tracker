@@ -13,7 +13,7 @@ public class DepartmentTest {
     @Test
     public void whenMissed() {
         List<String> input = Arrays.asList("k1/sk1", "k2/sk2");
-        List<String> expected = Arrays.asList("k1", "k1/sk1", "k2", "k2/sk2");
+        List<String> expected = List.of("k1", "k1/sk1", "k2", "k2/sk2");
         List<String> result = Department.fillGaps(input);
         assertThat(result, is(expected));
     }
@@ -21,7 +21,7 @@ public class DepartmentTest {
     @Test
     public void whenNotChange() {
         List<String> input = Arrays.asList("k1", "k1/sk1");
-        List<String> expected = Arrays.asList("k1", "k1/sk1");
+        List<String> expected = List.of("k1", "k1/sk1");
         List<String> result = Department.fillGaps(input);
         assertThat(result, is(expected));
     }
@@ -40,7 +40,7 @@ public class DepartmentTest {
                 "K2/SK1/SSK1",
                 "K2/SK1/SSK2"
         );
-        List<String> expected = Arrays.asList(
+        List<String> expected = List.of(
                 "K1",
                 "K1/SK1",
                 "K1/SK1/SSK1",
@@ -69,7 +69,7 @@ public class DepartmentTest {
                 "K2/SK1/SSK1",
                 "K2/SK1/SSK2"
         );
-        List<String> expected = Arrays.asList(
+        List<String> expected = List.of(
                 "K2",
                 "K2/SK1",
                 "K2/SK1/SSK1",
