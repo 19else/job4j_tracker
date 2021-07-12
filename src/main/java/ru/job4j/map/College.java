@@ -1,6 +1,7 @@
 package ru.job4j.map;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 public class College {
@@ -11,33 +12,30 @@ public class College {
         this.studentSetMap = studentSetMap;
     }
 
-//    public Student findByAccount(String account) {
-//        for (Student s : studentSetMap.keySet()) {
-//            if (s.getAccount().equals(account)) {
-//                return s;
-//            }
-//        }
-//        return null;
-//    }
-    public Student findByAccount(String account) {
-        return studentSetMap.keySet()
-                .stream()
-                .filter(f -> f.getAccount().equals(account))
-                .findFirst()
-                .orElse(null);
+    public Optional<Student> findByAccount(String account) {
+        Optional<Student> rsl = Optional.empty();
+        for (Student student : studentSetMap.keySet()) {
+            if (student.getAccount().equals(account)) {
+                rsl = Optional.of(student);
+                break;
+            }
+        }
+        return rsl;
     }
 
-    public Subject findBySubjectName(String account, String name) {
-        Student a = findByAccount(account);
-        if (a != null) {
-            Set<Subject> subjects = studentSetMap.get(a);
+    public Optional<Subject> findBySubjectName(String account, String name) {
+        Optional<Subject> rsl = Optional.empty();
+        Optional<Student> a = findByAccount(account);
+        if (a.isPresent()) {
+            Set<Subject> subjects = studentSetMap.get(a.get());
             for (Subject s : subjects) {
                 if (s.getName().equals(name)) {
-                    return s;
+                    rsl = Optional.of(s);
+                    break;
                 }
             }
         }
-        return null;
+        return rsl;
     }
 
     public static void main(String[] args) {
@@ -47,11 +45,16 @@ public class College {
                         new Subject("Math", 70),
                         new Subject("English", 85)
                 )
-                );
+        );
         College college = new College(studentSetMap);
-        Student student = college.findByAccount("00001");
-        System.out.println("Найденный студент - " + student);
-        Subject english = college.findBySubjectName("00001", "English");
-        System.out.println("Оценка по найденному предмету - " + english.getScore());
+        Optional<Student> student = college.findByAccount("00001");
+        if (student.isPresent()) {
+            System.out.println("Найден студент - " + student.get().getName());
+        } else {
+            System.out.println("Account is not found");
+        }
+        System.out.println();
+        Optional<Subject> english = college.findBySubjectName("00001", "English");
+        english.ifPresent(subject -> System.out.println("Оценка по найденному предмету - " + subject.getScore()));
     }
 }

@@ -51,7 +51,6 @@ public class Student {
         return Objects.equals(account, student.account);
     }
 
-
     public int hashcode() {
         return Objects.hash(account);
     }
