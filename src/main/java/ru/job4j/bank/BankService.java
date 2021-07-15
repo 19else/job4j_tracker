@@ -21,40 +21,18 @@ public class BankService {
         }
     }
 
-//    public Optional<User> findByPassport(String passport) {
-//        Optional<User> rsl = Optional.empty();
-//        for (User user : users.keySet()) {
-//            if (user.getPassport().equals(passport)) {
-//                rsl = Optional.of(user);
-//                break;
-//            }
-//        }
-//        return rsl;
-//    }
-
     public Optional<User> findByPassport(String passport) {
-        Optional<User> rsl = Optional.empty();
-         rsl = users.keySet().stream()
+               return users.keySet().stream()
                 .filter(r -> r.getPassport().equals(passport))
                 .findFirst();
-        return rsl;
     }
 
 
-
     public Optional<Account> findByRequisite(String passport, String requisite) {
-        Optional<Account> rsl = Optional.empty();
         Optional<User> user = findByPassport(passport);
-        if (user.isPresent()) {
-            List<Account> accounts = users.get(user.get());
-            rsl = accounts.stream()
-                    .filter(r -> r.getRequisite().equals(requisite))
-                    .findFirst();
-        } else {
-            System.out.println("User not found_findByRequisite()");
-        }
-
-        return rsl;
+        return user.flatMap(value -> users.get(value).stream()
+        .filter(e -> e.getRequisite().equals(requisite))
+                .findFirst());
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
