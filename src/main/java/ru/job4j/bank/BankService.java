@@ -1,10 +1,9 @@
 package ru.job4j.bank;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 public class BankService {
-    private Map<User, List<Account>> users = new HashMap<>();
+    private final Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
         List<Account> accounts = new ArrayList<>();
@@ -22,16 +21,15 @@ public class BankService {
     }
 
     public Optional<User> findByPassport(String passport) {
-               return users.keySet().stream()
+        return users.keySet().stream()
                 .filter(r -> r.getPassport().equals(passport))
                 .findFirst();
     }
 
-
     public Optional<Account> findByRequisite(String passport, String requisite) {
         Optional<User> user = findByPassport(passport);
         return user.flatMap(value -> users.get(value).stream()
-        .filter(e -> e.getRequisite().equals(requisite))
+                .filter(e -> e.getRequisite().equals(requisite))
                 .findFirst());
     }
 
@@ -54,7 +52,7 @@ public class BankService {
         BankService bankService = new BankService();
         bankService.addUser(new User("123456", "Billy Bones"));
         Optional<User> user = bankService.findByPassport("123456");
-        if(user.isPresent()) {
+        if (user.isPresent()) {
             System.out.println(user.get().getUsername());
         } else {
             System.out.println("passport is not correct");
@@ -65,6 +63,5 @@ public class BankService {
         int index = accountList.indexOf(new Account(requisite, -1));
         Account find = accountList.get(index);
         System.out.println("Реквизиты: " + find.getRequisite() + " Баланс:  " + find.getBalance());
-
     }
 }
